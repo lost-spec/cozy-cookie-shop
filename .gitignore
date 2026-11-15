@@ -1,0 +1,17 @@
+# Godot 4+ specific ignores
+.godot/
+/android/
+
+# Heavy binary assets (not pushed)
+*.glb
+*.glb.import
+*.glb.unwrap_cache
+*.blend
+*.blend1
+*.bak
+*_BAKE_MAT_*.png
+*.png.import
+*.glb.bak
+# Third-party addon (reinstallable)
+addons/
+_glb_nodes.txt

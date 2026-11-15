@@ -1,0 +1,761 @@
+[gd_scene format=3 uid="uid://buaq673iyr04d"]
+
+[ext_resource type="Script" uid="uid://nionry6x4dxs" path="res://player.gd" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://bxhpkqrawpm47" path="res://cookie_shop.glb" id="2_0xm2m"]
+[ext_resource type="Environment" uid="uid://bboc7mpiyo4s8" path="res://env_cookieshop.tres" id="2_5vw27"]
+[ext_resource type="PackedScene" uid="uid://cf7dit5q80q8o" path="res://granny.glb" id="3_granny"]
+[ext_resource type="Material" uid="uid://cgkicgiyad1ns" path="res://mat_counter_cream.tres" id="4_kek77"]
+[ext_resource type="Material" uid="uid://dhs88sd1dw34l" path="res://mat_wood_floor.tres" id="5_4c57u"]
+[ext_resource type="Material" uid="uid://cypnxjte4s16q" path="res://mat_pendant_bulb_emissive.tres" id="6_efxa6"]
+[ext_resource type="Material" uid="uid://b1rxtckvnmrxh" path="res://mat_window_glass_emissive.tres" id="7_dg77c"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1bvp3"]
+radius = 0.4
+height = 1.8
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_lquwl"]
+radius = 0.4
+height = 1.8
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0xm2m"]
+size = Vector3(8.4, 0.2, 6.4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_h2yge"]
+size = Vector3(8.4, 3, 0.2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1bvp3"]
+size = Vector3(8.4, 3, 0.2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lquwl"]
+size = Vector3(0.2, 3, 6.4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7mycd"]
+size = Vector3(0.2, 3, 6.4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5vw27"]
+size = Vector3(2.5, 0.84, 0.6500001)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kek77"]
+size = Vector3(2.4, 0.06, 0.5500002)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4c57u"]
+size = Vector3(2.6, 0.059999943, 0.75)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_efxa6"]
+size = Vector3(2.6999998, 0.94, 0.6999998)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dg77c"]
+size = Vector3(2.6, 0.1, 0.6199999)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ycdy4"]
+size = Vector3(2.8000002, 0.059999943, 0.8000002)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_w48qg"]
+size = Vector3(1.5999999, 1.78, 0.8000002)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vivmo"]
+size = Vector3(2.4, 0.92, 0.9999999)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2cqfq"]
+size = Vector3(0.095, 0.0231, 0.095)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yaehf"]
+size = Vector3(0.094999984, 0.01825, 0.094999984)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_074og"]
+size = Vector3(0.6999998, 0.9, 1.7999998)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cegan"]
+size = Vector3(0.3000002, 0.045000076, 1.4000001)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_82xsv"]
+size = Vector3(0.3000002, 0.045000076, 1.4000001)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_getpj"]
+size = Vector3(0.3000002, 0.045000076, 1.4000001)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ryguw"]
+size = Vector3(0.34000015, 0.03999996, 1.0999999)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_d13ii"]
+size = Vector3(0.34000015, 0.03999996, 1.0999999)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1u8w0"]
+size = Vector3(0.34000015, 0.03999996, 1.0999999)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0odxb"]
+size = Vector3(0.63999987, 0.025000095, 1.7000002)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lswn8"]
+size = Vector3(0.63999987, 0.025000095, 1.7000002)
+
+[node name="Main" type="Node3D" unique_id=682198550]
+
+[node name="Player" type="CharacterBody3D" parent="." unique_id=638944204]
+transform = Transform3D(-0.6685, 0, -0.7437, 0, 1, 0, 0.7437, 0, -0.6685, -1.6, 0.9, 0.5)
+collision_mask = 3
+script = ExtResource("1_ig7tw")
+
+[node name="Collision" type="CollisionShape3D" parent="Player" unique_id=1815210891]
+transform = Transform3D(1, 0, -2.9802322e-08, 0, 1, 0, 2.9802322e-08, 0, 1, -0.012411356, 0.011940718, 0.0062796474)
+shape = SubResource("CapsuleShape3D_1bvp3")
+
+[node name="Mesh" type="MeshInstance3D" parent="Player" unique_id=1121220377]
+visible = false
+mesh = SubResource("CapsuleMesh_lquwl")
+
+[node name="Camera" type="Camera3D" parent="Player" unique_id=60835410]
+transform = Transform3D(1, 0, 0, 0, 0.997564, 0.069756, 0, -0.069756, 0.997564, 0, 0.7, 0)
+current = true
+
+[node name="Sun" type="DirectionalLight3D" parent="." unique_id=311865062]
+transform = Transform3D(0.76604426, 0.3686878, -0.52654105, 0, 0.8191522, 0.5735762, 0.6427878, -0.43938476, 0.6275068, 0, 0, 0)
+light_color = Color(1, 0.92, 0.78, 1)
+light_energy = 1.6
+light_angular_distance = 0.5
+shadow_enabled = true
+shadow_bias = 0.05
+shadow_normal_bias = 1.5
+directional_shadow_max_distance = 30.0
+
+[node name="ExteriorFill" type="OmniLight3D" parent="." unique_id=551239801]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.35, 1.9, 5.2)
+light_color = Color(0.65, 0.78, 1, 1)
+light_energy = 0.6
+omni_range = 4.5
+
+[node name="Env" type="WorldEnvironment" parent="." unique_id=1054362601]
+environment = ExtResource("2_5vw27")
+
+[node name="ShopFloor" type="StaticBody3D" parent="." unique_id=202461166]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
+
+[node name="FloorCol" type="CollisionShape3D" parent="ShopFloor" unique_id=494277666]
+shape = SubResource("BoxShape3D_0xm2m")
+
+[node name="WallN" type="CollisionShape3D" parent="ShopFloor" unique_id=296370330]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -3.1)
+shape = SubResource("BoxShape3D_h2yge")
+
+[node name="WallS" type="CollisionShape3D" parent="ShopFloor" unique_id=993582612]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 3.1)
+shape = SubResource("BoxShape3D_1bvp3")
+
+[node name="WallE" type="CollisionShape3D" parent="ShopFloor" unique_id=225528524]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.1, 1.5, 0)
+shape = SubResource("BoxShape3D_lquwl")
+
+[node name="WallW" type="CollisionShape3D" parent="ShopFloor" unique_id=1291824532]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.1, 1.5, 0)
+shape = SubResource("BoxShape3D_7mycd")
+
+[node name="CookieShop" parent="." unique_id=1597261018 instance=ExtResource("2_0xm2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6275005, 0, 0)
+
+[node name="BACKCOUNTER_Body" parent="CookieShop" index="19" unique_id=999717127]
+metadata/_godot_ai_physics_v1 = {
+"body": NodePath("../BACKCOUNTER_BodyCollider"),
+"collision": NodePath("../BACKCOUNTER_BodyCollider/CollisionShape3D"),
+"version": 1,
+"wrapped": false
+}
+
+[node name="BACKCOUNTER_Toe" parent="CookieShop" index="28" unique_id=1517783824]
+metadata/_godot_ai_physics_v1 = {
+"body": NodePath("../BACKCOUNTER_ToeCollider"),
+"collision": NodePath("../BACKCOUNTER_ToeCollider/CollisionShape3D"),
+"version": 1,
+"wrapped": false
+}
+
+[node name="BACKCOUNTER_Top" parent="CookieShop" index="29" unique_id=762481619]
+material_override = ExtResource("4_kek77")
+metadata/_godot_ai_physics_v1 = {
+"body": NodePath("../BACKCOUNTER_TopCollider"),
+"collision": NodePath("../BACKCOUNTER_TopCollider/CollisionShape3D"),
+"version": 1,
+"wrapped": false
+}
+
+[node name="CASE_Base" parent="CookieShop" index="60" unique_id=2115732088]
+metadata/_godot_ai_physics_v1 = {
+"body": NodePath("../CASE_BaseCollider"),
+"collision": NodePath("../CASE_BaseCollider/CollisionShape3D"),
+"version": 1,
+"wrapped": false
+}
+
+[node name="CASE_Shelf_1" parent="CookieShop" index="83" unique_id=850417155]
+metadata/_godot_ai_physics_v1 = {
+"body": NodePath("../CASE_Shelf_1Collider"),
+"collision": NodePath("../CASE_Shelf_1Collider/CollisionShape3D"),
+"version": 1,
+"wrapped": false
+}
+
+[node name="CASE_Shelf_2" parent="CookieShop" index="84" unique_id=125332623]
+metadata/_godot_ai_physics_v1 = {
+"body": NodePath("../CASE_Shelf_2Collider"),
+"collision": NodePath("../CASE_Shelf_2Collider/CollisionShape3D"),
+"version": 1,
+"wrapped": false
+}
+
+[node name="CEILING_Main" parent="CookieShop" index="85" unique_id=256175761]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0034003258, -0.008098602, 0.00036638975)
+material_override = ExtResource("5_4c57u")
+
+[node name="COOKIE_Table_1" parent="CookieShop" index="167" unique_id=1391633363]
+material_override = ExtResource("4_kek77")
+metadata/_godot_ai_physics_v1 = {
+"body": NodePath("../COOKIE_Table_1Collider"),
+"collision": NodePath("../COOKIE_Table_1Collider/CollisionShape3D"),
+"version": 1,
+"wrapped": false
+}
+
+[node name="COOKIE_Table_2" parent="CookieShop" index="168" unique_id=193249839]
+metadata/_godot_ai_physics_v1 = {
+"body": NodePath("../COOKIE_Table_2Collider"),
+"collision": NodePath("../COOKIE_Table_2Collider/CollisionShape3D"),
+"version": 1,
+"wrapped": false
+}
+
+[node name="COUNTER_Window_Body" parent="CookieShop" index="169" unique_id=506178034]
+metadata/_godot_ai_physics_v1 = {
+"body": NodePath("../COUNTER_Window_BodyCollider"),
+"collision": NodePath("../COUNTER_Window_BodyCollider/CollisionShape3D"),
+"version": 1,
+"wrapped": false
+}
+
+[node name="COUNTER_Window_Toe" parent="CookieShop" index="170" unique_id=765672879]
+metadata/_godot_ai_physics_v1 = {
+"body": NodePath("../COUNTER_Window_ToeCollider"),
+"collision": NodePath("../COUNTER_Window_ToeCollider/CollisionShape3D"),
+"version": 1,
+"wrapped": false
+}
+
+[node name="COUNTER_Window_Top" parent="CookieShop" index="171" unique_id=2138271509]
+metadata/_godot_ai_physics_v1 = {
+"body": NodePath("../COUNTER_Window_TopCollider"),
+"collision": NodePath("../COUNTER_Window_TopCollider/CollisionShape3D"),
+"version": 1,
+"wrapped": false
+}
+
+[node name="FLOOR_Main" parent="CookieShop" index="236" unique_id=577994952]
+material_override = ExtResource("5_4c57u")
+
+[node name="INGRED_Shelf_1" parent="CookieShop" index="311" unique_id=672766326]
+metadata/_godot_ai_physics_v1 = {
+"body": NodePath("../INGRED_Shelf_1Collider"),
+"collision": NodePath("../INGRED_Shelf_1Collider/CollisionShape3D"),
+"version": 1,
+"wrapped": false
+}
+
+[node name="INGRED_Shelf_2" parent="CookieShop" index="312" unique_id=408760074]
+metadata/_godot_ai_physics_v1 = {
+"body": NodePath("../INGRED_Shelf_2Collider"),
+"collision": NodePath("../INGRED_Shelf_2Collider/CollisionShape3D"),
+"version": 1,
+"wrapped": false
+}
+
+[node name="INGRED_Shelf_3" parent="CookieShop" index="313" unique_id=1580741933]
+metadata/_godot_ai_physics_v1 = {
+"body": NodePath("../INGRED_Shelf_3Collider"),
+"collision": NodePath("../INGRED_Shelf_3Collider/CollisionShape3D"),
+"version": 1,
+"wrapped": false
+}
+
+[node name="ISLAND_Base" parent="CookieShop" index="317" unique_id=55689509]
+metadata/_godot_ai_physics_v1 = {
+"body": NodePath("../ISLAND_BaseCollider"),
+"collision": NodePath("../ISLAND_BaseCollider/CollisionShape3D"),
+"version": 1,
+"wrapped": false
+}
+
+[node name="LGT_BackDoor" parent="CookieShop" index="368" unique_id=2138298492]
+light_energy = 1.5
+omni_range = 4.0
+
+[node name="LGT_Case_1" parent="CookieShop" index="370" unique_id=1365674079]
+light_energy = 0.25
+omni_range = 1.5
+
+[node name="LGT_Case_2" parent="CookieShop" index="371" unique_id=1425103492]
+light_energy = 0.25
+omni_range = 1.5
+
+[node name="LGT_Oven_1" parent="CookieShop" index="375" unique_id=521782742]
+light_energy = 1.0
+omni_range = 2.5
+
+[node name="LGT_Oven_2" parent="CookieShop" index="376" unique_id=1351876720]
+light_energy = 0.8
+omni_range = 2.0
+
+[node name="LGT_OvenSpill" parent="CookieShop" index="377" unique_id=271989955]
+light_energy = 1.2
+omni_range = 3.0
+
+[node name="LGT_Pendant_1" parent="CookieShop" index="378" unique_id=1180771774]
+light_energy = 2.0
+omni_range = 7.0
+
+[node name="LGT_Pendant_2" parent="CookieShop" index="379" unique_id=1635213355]
+light_energy = 2.0
+omni_range = 7.0
+
+[node name="LGT_Pendant_3" parent="CookieShop" index="380" unique_id=1597694338]
+light_energy = 2.0
+omni_range = 7.0
+
+[node name="LGT_Sun" parent="CookieShop" index="381" unique_id=1550326177]
+visible = false
+
+[node name="OVEN_Body" parent="CookieShop" index="407" unique_id=1392156334]
+metadata/_godot_ai_physics_v1 = {
+"body": NodePath("../OVEN_BodyCollider"),
+"collision": NodePath("../OVEN_BodyCollider/CollisionShape3D"),
+"version": 1,
+"wrapped": false
+}
+
+[node name="OvenGlow" type="OmniLight3D" parent="CookieShop/OVEN_Body" index="0" unique_id=1448433787]
+light_color = Color(1, 0.45, 0.15, 1)
+light_energy = 1.5
+omni_range = 3.0
+
+[node name="PENDANT_Bulb_1" parent="CookieShop" index="455" unique_id=42208262]
+material_override = ExtResource("6_efxa6")
+
+[node name="PENDANT_Bulb_2" parent="CookieShop" index="456" unique_id=480008933]
+material_override = ExtResource("6_efxa6")
+
+[node name="LampLight_1" type="OmniLight3D" parent="CookieShop/PENDANT_Shade_1" parent_id_path=PackedInt32Array(1597261018, 1554753517) index="0" unique_id=439718838]
+light_color = Color(1, 0.72, 0.42, 1)
+light_energy = 2.0
+shadow_enabled = true
+shadow_blur = 1.5
+omni_attenuation = 1.5
+
+[node name="LampSpot_1" type="SpotLight3D" parent="CookieShop/PENDANT_Shade_1" parent_id_path=PackedInt32Array(1597261018, 1554753517) index="1" unique_id=1028476110]
+light_color = Color(1, 0.72, 0.42, 1)
+spot_range = 4.0
+spot_angle = 0.959931
+
+[node name="LampLight_2" type="OmniLight3D" parent="CookieShop/PENDANT_Shade_2" parent_id_path=PackedInt32Array(1597261018, 1952313069) index="0" unique_id=1574228207]
+light_color = Color(1, 0.72, 0.42, 1)
+light_energy = 2.0
+shadow_enabled = true
+shadow_blur = 1.5
+omni_attenuation = 1.5
+
+[node name="LampSpot_2" type="SpotLight3D" parent="CookieShop/PENDANT_Shade_2" parent_id_path=PackedInt32Array(1597261018, 1952313069) index="1" unique_id=222511534]
+light_color = Color(1, 0.72, 0.42, 1)
+spot_range = 4.0
+spot_angle = 0.959931
+
+[node name="SHELF_Wall_1" parent="CookieShop" index="546" unique_id=719275002]
+metadata/_godot_ai_physics_v1 = {
+"body": NodePath("../SHELF_Wall_1Collider"),
+"collision": NodePath("../SHELF_Wall_1Collider/CollisionShape3D"),
+"version": 1,
+"wrapped": false
+}
+
+[node name="SHELF_Wall_2" parent="CookieShop" index="547" unique_id=752337032]
+metadata/_godot_ai_physics_v1 = {
+"body": NodePath("../SHELF_Wall_2Collider"),
+"collision": NodePath("../SHELF_Wall_2Collider/CollisionShape3D"),
+"version": 1,
+"wrapped": false
+}
+
+[node name="SHELF_Wall_3" parent="CookieShop" index="548" unique_id=2083397467]
+metadata/_godot_ai_physics_v1 = {
+"body": NodePath("../SHELF_Wall_3Collider"),
+"collision": NodePath("../SHELF_Wall_3Collider/CollisionShape3D"),
+"version": 1,
+"wrapped": false
+}
+
+[node name="WINDOW_Side_L_Glass" parent="CookieShop" index="671" unique_id=1986958822]
+material_override = ExtResource("7_dg77c")
+
+[node name="WINDOW_Side_R_Glass" parent="CookieShop" index="675" unique_id=1737121671]
+material_override = ExtResource("7_dg77c")
+
+[node name="WindowLight_L" type="OmniLight3D" parent="CookieShop" unique_id=1149793654]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.98, 1, 1.6)
+light_color = Color(0.7, 0.82, 1, 1)
+light_energy = 0.6
+omni_range = 3.5
+
+[node name="WindowLight_R" type="OmniLight3D" parent="CookieShop" unique_id=1497215160]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.98, 1, 1.6)
+light_color = Color(0.7, 0.82, 1, 1)
+light_energy = 0.6
+omni_range = 3.5
+
+[node name="BACKCOUNTER_BodyCollider" type="StaticBody3D" parent="CookieShop" unique_id=2090746240]
+collision_layer = 2
+metadata/_godot_ai_physics_v1 = {
+"collision": NodePath("CollisionShape3D"),
+"source": NodePath("../BACKCOUNTER_Body"),
+"version": 1,
+"wrapped": false
+}
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CookieShop/BACKCOUNTER_BodyCollider" unique_id=626834583]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0.48, -2.575)
+shape = SubResource("BoxShape3D_5vw27")
+metadata/_godot_ai_physics_v1 = {
+"body": NodePath(".."),
+"source": NodePath("../../BACKCOUNTER_Body"),
+"version": 1
+}
+
+[node name="BACKCOUNTER_ToeCollider" type="StaticBody3D" parent="CookieShop" unique_id=1179540256]
+collision_layer = 2
+metadata/_godot_ai_physics_v1 = {
+"collision": NodePath("CollisionShape3D"),
+"source": NodePath("../BACKCOUNTER_Toe"),
+"version": 1,
+"wrapped": false
+}
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CookieShop/BACKCOUNTER_ToeCollider" unique_id=545486778]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0.03, -2.575)
+shape = SubResource("BoxShape3D_kek77")
+metadata/_godot_ai_physics_v1 = {
+"body": NodePath(".."),
+"source": NodePath("../../BACKCOUNTER_Toe"),
+"version": 1
+}
+
+[node name="BACKCOUNTER_TopCollider" type="StaticBody3D" parent="CookieShop" unique_id=425849613]
+collision_layer = 2
+metadata/_godot_ai_physics_v1 = {
+"collision": NodePath("CollisionShape3D"),
+"source": NodePath("../BACKCOUNTER_Top"),
+"version": 1,
+"wrapped": false
+}
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CookieShop/BACKCOUNTER_TopCollider" unique_id=139079505]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25, 0.9, -2.575)
+shape = SubResource("BoxShape3D_4c57u")
+metadata/_godot_ai_physics_v1 = {
+"body": NodePath(".."),
+"source": NodePath("../../BACKCOUNTER_Top"),
+"version": 1
+}
+
+[node name="COUNTER_Window_BodyCollider" type="StaticBody3D" parent="CookieShop" unique_id=479640217]
+collision_layer = 2
+metadata/_godot_ai_physics_v1 = {
+"collision": NodePath("CollisionShape3D"),
+"source": NodePath("../COUNTER_Window_Body"),
+"version": 1,
+"wrapped": false
+}
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CookieShop/COUNTER_Window_BodyCollider" unique_id=532590189]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.25, 0.47, 2.55)
+shape = SubResource("BoxShape3D_efxa6")
+metadata/_godot_ai_physics_v1 = {
+"body": NodePath(".."),
+"source": NodePath("../../COUNTER_Window_Body"),
+"version": 1
+}
+
+[node name="COUNTER_Window_ToeCollider" type="StaticBody3D" parent="CookieShop" unique_id=731572885]
+collision_layer = 2
+metadata/_godot_ai_physics_v1 = {
+"collision": NodePath("CollisionShape3D"),
+"source": NodePath("../COUNTER_Window_Toe"),
+"version": 1,
+"wrapped": false
+}
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CookieShop/COUNTER_Window_ToeCollider" unique_id=1929928392]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.25, 0.05, 2.55)
+shape = SubResource("BoxShape3D_dg77c")
+metadata/_godot_ai_physics_v1 = {
+"body": NodePath(".."),
+"source": NodePath("../../COUNTER_Window_Toe"),
+"version": 1
+}
+
+[node name="COUNTER_Window_TopCollider" type="StaticBody3D" parent="CookieShop" unique_id=2020148105]
+collision_layer = 2
+metadata/_godot_ai_physics_v1 = {
+"collision": NodePath("CollisionShape3D"),
+"source": NodePath("../COUNTER_Window_Top"),
+"version": 1,
+"wrapped": false
+}
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CookieShop/COUNTER_Window_TopCollider" unique_id=684507566]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.25, 0.97, 2.55)
+shape = SubResource("BoxShape3D_ycdy4")
+metadata/_godot_ai_physics_v1 = {
+"body": NodePath(".."),
+"source": NodePath("../../COUNTER_Window_Top"),
+"version": 1
+}
+
+[node name="OVEN_BodyCollider" type="StaticBody3D" parent="CookieShop" unique_id=1546811954]
+collision_layer = 2
+metadata/_godot_ai_physics_v1 = {
+"collision": NodePath("CollisionShape3D"),
+"source": NodePath("../OVEN_Body"),
+"version": 1,
+"wrapped": false
+}
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CookieShop/OVEN_BodyCollider" unique_id=1710443195]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 1.01, -2.55)
+shape = SubResource("BoxShape3D_w48qg")
+metadata/_godot_ai_physics_v1 = {
+"body": NodePath(".."),
+"source": NodePath("../../OVEN_Body"),
+"version": 1
+}
+
+[node name="ISLAND_BaseCollider" type="StaticBody3D" parent="CookieShop" unique_id=795001262]
+collision_layer = 2
+metadata/_godot_ai_physics_v1 = {
+"collision": NodePath("CollisionShape3D"),
+"source": NodePath("../ISLAND_Base"),
+"version": 1,
+"wrapped": false
+}
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CookieShop/ISLAND_BaseCollider" unique_id=619746136]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.46, -1.5999999)
+shape = SubResource("BoxShape3D_vivmo")
+metadata/_godot_ai_physics_v1 = {
+"body": NodePath(".."),
+"source": NodePath("../../ISLAND_Base"),
+"version": 1
+}
+
+[node name="COOKIE_Table_1Collider" type="StaticBody3D" parent="CookieShop" unique_id=1932728766]
+transform = Transform3D(0.96465135, 0, -0.2635294, 0, 1, 0, 0.2635294, 0, 0.96465135, -1.45, 0.773, 2.25)
+collision_layer = 2
+metadata/_godot_ai_physics_v1 = {
+"collision": NodePath("CollisionShape3D"),
+"source": NodePath("../COOKIE_Table_1"),
+"version": 1,
+"wrapped": false
+}
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CookieShop/COOKIE_Table_1Collider" unique_id=606325001]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0045499997, 0)
+shape = SubResource("BoxShape3D_2cqfq")
+metadata/_godot_ai_physics_v1 = {
+"body": NodePath(".."),
+"source": NodePath("../../COOKIE_Table_1"),
+"version": 1
+}
+
+[node name="COOKIE_Table_2Collider" type="StaticBody3D" parent="CookieShop" unique_id=1566570045]
+transform = Transform3D(0.5718149, 0, -0.8203827, 0, 1, 0, 0.8203827, 0, 0.5718149, -0.35, 0.773, 2.25)
+collision_layer = 2
+metadata/_godot_ai_physics_v1 = {
+"collision": NodePath("CollisionShape3D"),
+"source": NodePath("../COOKIE_Table_2"),
+"version": 1,
+"wrapped": false
+}
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CookieShop/COOKIE_Table_2Collider" unique_id=933981085]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0021249996, 0)
+shape = SubResource("BoxShape3D_yaehf")
+metadata/_godot_ai_physics_v1 = {
+"body": NodePath(".."),
+"source": NodePath("../../COOKIE_Table_2"),
+"version": 1
+}
+
+[node name="CASE_BaseCollider" type="StaticBody3D" parent="CookieShop" unique_id=1739833269]
+collision_layer = 2
+metadata/_godot_ai_physics_v1 = {
+"collision": NodePath("CollisionShape3D"),
+"source": NodePath("../CASE_Base"),
+"version": 1,
+"wrapped": false
+}
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CookieShop/CASE_BaseCollider" unique_id=1339819198]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.2, 0.45, 1.2)
+shape = SubResource("BoxShape3D_074og")
+metadata/_godot_ai_physics_v1 = {
+"body": NodePath(".."),
+"source": NodePath("../../CASE_Base"),
+"version": 1
+}
+
+[node name="SHELF_Wall_1Collider" type="StaticBody3D" parent="CookieShop" unique_id=1872836045]
+collision_layer = 2
+metadata/_godot_ai_physics_v1 = {
+"collision": NodePath("CollisionShape3D"),
+"source": NodePath("../SHELF_Wall_1"),
+"version": 1,
+"wrapped": false
+}
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CookieShop/SHELF_Wall_1Collider" unique_id=1265810175]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.75, 1.66, 1.2)
+shape = SubResource("BoxShape3D_cegan")
+metadata/_godot_ai_physics_v1 = {
+"body": NodePath(".."),
+"source": NodePath("../../SHELF_Wall_1"),
+"version": 1
+}
+
+[node name="SHELF_Wall_2Collider" type="StaticBody3D" parent="CookieShop" unique_id=1739991336]
+collision_layer = 2
+metadata/_godot_ai_physics_v1 = {
+"collision": NodePath("CollisionShape3D"),
+"source": NodePath("../SHELF_Wall_2"),
+"version": 1,
+"wrapped": false
+}
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CookieShop/SHELF_Wall_2Collider" unique_id=1088716687]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.75, 2, 1.2)
+shape = SubResource("BoxShape3D_82xsv")
+metadata/_godot_ai_physics_v1 = {
+"body": NodePath(".."),
+"source": NodePath("../../SHELF_Wall_2"),
+"version": 1
+}
+
+[node name="SHELF_Wall_3Collider" type="StaticBody3D" parent="CookieShop" unique_id=980171590]
+collision_layer = 2
+metadata/_godot_ai_physics_v1 = {
+"collision": NodePath("CollisionShape3D"),
+"source": NodePath("../SHELF_Wall_3"),
+"version": 1,
+"wrapped": false
+}
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CookieShop/SHELF_Wall_3Collider" unique_id=918999763]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.75, 2.34, 1.2)
+shape = SubResource("BoxShape3D_getpj")
+metadata/_godot_ai_physics_v1 = {
+"body": NodePath(".."),
+"source": NodePath("../../SHELF_Wall_3"),
+"version": 1
+}
+
+[node name="INGRED_Shelf_1Collider" type="StaticBody3D" parent="CookieShop" unique_id=1544971457]
+collision_layer = 2
+metadata/_godot_ai_physics_v1 = {
+"collision": NodePath("CollisionShape3D"),
+"source": NodePath("../INGRED_Shelf_1"),
+"version": 1,
+"wrapped": false
+}
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CookieShop/INGRED_Shelf_1Collider" unique_id=982123609]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.72, 1.45, -1.8)
+shape = SubResource("BoxShape3D_ryguw")
+metadata/_godot_ai_physics_v1 = {
+"body": NodePath(".."),
+"source": NodePath("../../INGRED_Shelf_1"),
+"version": 1
+}
+
+[node name="INGRED_Shelf_2Collider" type="StaticBody3D" parent="CookieShop" unique_id=136148680]
+collision_layer = 2
+metadata/_godot_ai_physics_v1 = {
+"collision": NodePath("CollisionShape3D"),
+"source": NodePath("../INGRED_Shelf_2"),
+"version": 1,
+"wrapped": false
+}
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CookieShop/INGRED_Shelf_2Collider" unique_id=720986500]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.72, 1.85, -1.8)
+shape = SubResource("BoxShape3D_d13ii")
+metadata/_godot_ai_physics_v1 = {
+"body": NodePath(".."),
+"source": NodePath("../../INGRED_Shelf_2"),
+"version": 1
+}
+
+[node name="INGRED_Shelf_3Collider" type="StaticBody3D" parent="CookieShop" unique_id=867340715]
+collision_layer = 2
+metadata/_godot_ai_physics_v1 = {
+"collision": NodePath("CollisionShape3D"),
+"source": NodePath("../INGRED_Shelf_3"),
+"version": 1,
+"wrapped": false
+}
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CookieShop/INGRED_Shelf_3Collider" unique_id=1120721583]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.72, 2.25, -1.8)
+shape = SubResource("BoxShape3D_1u8w0")
+metadata/_godot_ai_physics_v1 = {
+"body": NodePath(".."),
+"source": NodePath("../../INGRED_Shelf_3"),
+"version": 1
+}
+
+[node name="CASE_Shelf_1Collider" type="StaticBody3D" parent="CookieShop" unique_id=1217040881]
+collision_layer = 2
+metadata/_godot_ai_physics_v1 = {
+"collision": NodePath("CollisionShape3D"),
+"source": NodePath("../CASE_Shelf_1"),
+"version": 1,
+"wrapped": false
+}
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CookieShop/CASE_Shelf_1Collider" unique_id=191329617]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.2, 1.04, 1.2)
+shape = SubResource("BoxShape3D_0odxb")
+metadata/_godot_ai_physics_v1 = {
+"body": NodePath(".."),
+"source": NodePath("../../CASE_Shelf_1"),
+"version": 1
+}
+
+[node name="CASE_Shelf_2Collider" type="StaticBody3D" parent="CookieShop" unique_id=1785510422]
+collision_layer = 2
+metadata/_godot_ai_physics_v1 = {
+"collision": NodePath("CollisionShape3D"),
+"source": NodePath("../CASE_Shelf_2"),
+"version": 1,
+"wrapped": false
+}
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CookieShop/CASE_Shelf_2Collider" unique_id=1533810210]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.2, 1.21, 1.2)
+shape = SubResource("BoxShape3D_lswn8")
+metadata/_godot_ai_physics_v1 = {
+"body": NodePath(".."),
+"source": NodePath("../../CASE_Shelf_2"),
+"version": 1
+}
+
+[node name="Granny" parent="." unique_id=1803858570 instance=ExtResource("3_granny")]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 1.65, 0.03, 3.9)
+
+[node name="ShopReflectionProbe" type="ReflectionProbe" parent="." unique_id=275389459]
+update_mode = 1
+size = Vector3(8.2, 4, 6.2)
+box_projection = true
+interior = true
+
+[editable path="CookieShop"]
