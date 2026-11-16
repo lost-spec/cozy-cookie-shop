@@ -102,9 +102,6 @@ const DAY_TIMES := ["9:00 AM", "1:00 PM", "6:00 PM", "9:00 PM"]
 # -1 = off. 0..3 forces Day / Afternoon / Evening / Night at startup and skips the menu.
 const DEBUG_PHASE := -1
 
-# When true, the game loads GachaShop.tscn at startup instead of the menu.
-const DEBUG_GACHA := false
-
 # Lighting phase presets (Spec 04). GL Compatibility has no GI or lightmap
 # baking, so these drive a dynamic-only look: sun + sky ambient + lamp spots +
 # unshadowed fill lights. "ambient" scales the sky/ambient contribution and

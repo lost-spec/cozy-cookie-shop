@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="game"
-run/main_scene="res://scenes/GachaShop.tscn"
+run/main_scene="res://main.tscn"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -83,7 +83,6 @@ renderer/rendering_method.mobile="gl_compatibility"
 lights_and_shadows/directional_shadow/soft_shadow_filter_quality=4
 lights_and_shadows/positional_shadow/soft_shadow_filter_quality=4
 textures/default_filters/anisotropic_filtering_level=3
-anti_aliasing/quality/msaa_3d=2
 limits/opengl/max_renderable_lights=64
-limits/opengl/max_lights_per_object=16
-environment/defaults/default_clear_color="#050407"
+limits/opengl/max_lights_per_object=24
+anti_aliasing/quality/screen_space_aa=1
